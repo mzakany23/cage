@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D3</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag 'cage' %>
+  <%= javascript_include_tag 'tooltip' %>
+  <%= csrf_meta_tags %>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+  <body>
+
+    <script>
+      $(function(){
+          $('#refresh').on('click', function(){
+              location.reload();
+          });
+      })
+
+      $(function(){
+
+          $('input:radio').on('click', function(){
+
+              var selected = $('input:checked').val();
+              showCage(selected);
+
+              // these are just other files I was playing with
+              // if(selected == 'perfin.CSV'){
+              //     showPerfin(selected);
+              // }else if(selected == 'data.csv'){
+              //     showData(selected);
+              // }else if(selected == 'caged_beast.csv'){
+              //     showCage(selected);
+              // }
+
+              });
+
+          $('input:checkbox').on('click', function(){
+              var selected = $('input:checked').val();
+              appendDataSet(selected);
+              
+          });
+
+
+          });
+    </script>
+
+<%= render 'welcome/navbar' %>
+<%= render 'welcome/content_bar' %>
+
+</body>
+</html>

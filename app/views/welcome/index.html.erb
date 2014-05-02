@@ -1,0 +1,34 @@
+<%= content_for :csv_files do %>
+	<%= label_tag('Files') %> <br>
+	
+		<% @show_file.each do |line| %>
+				<div class="radio">
+					<label>
+						<input type="radio" id='csv-file-<%=@num%>' name='option' value='<%= line %>'>
+						<%= line %>
+						<% @num += 1 %>
+					</label>
+				</div>
+		<% end %>
+
+<div id='refresh' class="btn btn-primary btn-block" style='margin-bottom: 3px;'>Refresh Page</div>
+<div id='delete' class="btn btn-danger btn-block">Delete File</div>
+
+<% end %>
+
+<%= content_for :overlap do %>
+	<%= label_tag('Overlap') %> <br>
+	
+	<% @show_file.each do |line| %>
+			<div class="checkbox">
+					<label>
+						<input type="checkbox" id='csv-file-<%=@num%>' name='option' value='<%= line %>'>
+						<%= line %>
+						<% @num += 1 %>
+					</label>
+				</div>
+	<% end %>
+
+<% end %>
+
+

@@ -1,0 +1,20 @@
+<script>
+	$(function(){
+			$('input[placeholder]').on('focus', function () {
+			    var $this = $(this);
+			    $this.data('placeholder', $this.prop('placeholder')).removeAttr('placeholder')
+			}).on('blur', function () {
+    			var $this = $(this);
+    					$this.prop('placeholder', $this.data('placeholder'));
+					});
+	});
+</script>
+
+<%= form_tag('welcome/csv', multipart: true) do %>
+<%= label_tag("Url to CSV") %> <br>
+<%= text_field_tag(:url, nil , placeholder: 'enter url', class: 'form-control', id: 'grab') %><br>
+<%= label_tag('CSV File Name') %> <br>
+<%= text_field_tag(:file_name, nil , placeholder: 'enter csv file name', class: 'form-control', id: 'grab') %><br>
+<%= submit_tag('Make CSV', class: 'btn btn-primary') %>
+
+<% end %>

@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+<%= render 'welcome/navbar' %>
+
+<div class="row well">
+	<div class="col-md-8 col-md-offset-1">
+		<h2>Start of d3 function</h2>
+		<h2><small>Set variables </small></h2>
+		<p><%= image_tag('d3/d3-1.png') %></p>
+		<h2>Scales and Axis</h2>
+		<h2><small>Scales make it so values stay within bounds</small></h2>
+		<h2><small>Axis label the y and x axis</small></h2>
+		<p><%= image_tag('d3/d3-2.png') %></p>
+		<h2>Scatter variable MAIN</h2>
+		<h2><small>Two steps: 1. make canvas and, 2. dynamically make element</small></h2>
+		<p><%= image_tag('d3/d3-3.png') %></p>
+		<h2>Tool Tip and Convert <code>+d['lifetime_gross_sales']</code> to dollar string</h2>
+		<h2>
+			<small>
+					Downloaded tooltip from: <%= link_to "bl.ocks.org/ilyabo1373263", 'http://bl.ocks.org/ilyabo/1373263'  %>
+			</small>
+			
+		</h2>
+		<p><%= image_tag('d3/d3-4.png', size: '900x400') %></p>
+		<h2>Axis go at the end</h2>
+		<h2><small>axis go at the end </small></h2>
+		<p><%= image_tag('d3/d3-5.png') %></p>
+
+	</div>
+</div>

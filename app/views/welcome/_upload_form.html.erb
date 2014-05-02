@@ -1,0 +1,5 @@
+<%= form_tag('welcome/upload', multipart: true) do %>
+<%= label_tag("upload Form") %> <br>
+<%= file_field_tag(:csv, class: 'form-control') %> <br>
+<%= submit_tag('Upload CSV', class: 'btn btn-primary ') %>
+<% end %>
