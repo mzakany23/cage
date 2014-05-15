@@ -16,9 +16,16 @@
           $('#refresh').on('click', function(){
               location.reload();
           });
-      })
 
-      $(function(){
+          $('div#delete').on('click', function() {
+            var selectedCsv = $('input[type=radio]:checked').val();
+            $.post('/welcome/delete', {'filename': selectedCsv}, function(data) {
+              if(data.result === true) {
+                $('input[value="' + selectedCsv + '"]').parents('div.radio').fadeOut().remove();
+                $('input[value="' + selectedCsv + '"]').parents('div.checkbox').fadeOut().remove();
+              }
+            });
+          });
 
           $('input:radio').on('click', function(){
 
@@ -43,7 +50,7 @@
           });
 
 
-          });
+      });
     </script>
 
 <%= render 'welcome/navbar' %>

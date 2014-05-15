@@ -10,6 +10,7 @@ D3::Application.routes.draw do
   root 'welcome#index'
   post 'welcome/upload'
   post 'welcome/csv'
+  match '/welcome/delete', to: 'welcome#delete_file', via: :post
 
   match '/javascript', to: 'pages#javascript', via: :get
   match '/scrape', to: 'pages#scrape', via: :get

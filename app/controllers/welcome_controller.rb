@@ -59,9 +59,17 @@ class WelcomeController < ApplicationController
   end
 
   def delete_file
-    file_to_delete = params[:file_delete]
+    file_to_delete = params[:filename]
+
+    filename_okay = file_to_delete.match(/\.\./) == nil
+
+    if filename_okay
+      File.delete(File.join(Rails.root, 'public', file_to_delete)) 
     
-    render layout: false
+      render json: {result: true}
+    else
+      render json: {result: false}
+    end
   end
 
 
