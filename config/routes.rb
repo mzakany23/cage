@@ -1,4 +1,5 @@
 D3::Application.routes.draw do
+  get '*path' => redirect('/')
   get "cage/index"
   resources :tests
 
