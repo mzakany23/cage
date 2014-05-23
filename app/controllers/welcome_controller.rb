@@ -4,6 +4,10 @@ require_relative '../../lib/caged_beast_csv'
 
 class WelcomeController < ApplicationController
 
+  def route_error
+    redirect_to root_url
+  end
+
   def check_csv_files
     csv_files = []
     path = 'public'

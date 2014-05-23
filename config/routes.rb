@@ -1,5 +1,4 @@
 D3::Application.routes.draw do
-  get '*path' => redirect('/')
   get "cage/index"
   resources :tests
 
@@ -19,6 +18,7 @@ D3::Application.routes.draw do
   match '/welcome', to: 'welcome#index', via: :get
   match '/cage', to: 'cage#index', via: :get
 
+  get '*path', :controller => 'welcome', :action => 'route_error'
 
 
 
