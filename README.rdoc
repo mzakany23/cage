@@ -1,8 +1,7 @@
-[Mojo Data Visualization](http://www.boxofficemojo.com/people/chart/?id=jimcarrey.htm)
+Mojo Data Visualization
+(http://www.boxofficemojo.com/people/chart/?id=jimcarrey.htm)
 
-See site: [http://mczapphome.us/](http://mczapphome.us/)`
+See site: http://mczapphome.us/
 
-```
 Enter the mojo actor url and display visualization using d3.js`
 
-```
